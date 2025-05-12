@@ -1,7 +1,6 @@
-using BlogApi.Contexts;
+using BlogApi.Interfaces;
 using BlogApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,60 +10,64 @@ namespace BlogApi.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
-        private readonly BlogContext _dbContext;
-        public PostsController(BlogContext dbContext)
+        private readonly IPostService _postService;
+        public PostsController(IPostService postService)
         {
-            _dbContext = dbContext;
+            _postService = postService;
         }
         // GET: api/<Posts>
         [HttpGet]
-        public async Task<IEnumerable<Post>> Get()
+        public async Task<IActionResult> GetAll()
         {
-            return await _dbContext.Posts.ToListAsync();
+            var posts = await _postService.GetAllAsync();
+            return Ok(posts);
         }
 
         // GET api/<Posts>/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Post>> Get(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            Post? post = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
-
+            Post? post = await _postService.GetByIdAsync(id);
             if (post == null) return NotFound(new { message = "пост не найден" });
-
             return Ok(post);
         }
 
         // POST api/<Posts>
         [HttpPost]
-        public async Task<ActionResult<Post>> Post([FromBody]Post newPost)
+        public async Task<IActionResult> Post([FromBody]PostDto newPost)
         {
-            newPost.CreateAt = DateTime.Now;
-            await _dbContext.AddAsync(newPost);
-            await _dbContext.SaveChangesAsync();
-            return Created();
+            if(!ModelState.IsValid) return BadRequest(ModelState);
+            var post = await _postService.CreateAsync(newPost);
+            return CreatedAtAction(nameof(GetById), new {id = post.Id}, post);
         }
 
         // PUT api/<Posts>/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<Post>> Put(int id, [FromBody]Post post)
+        public async Task<ActionResult<Post>> Put(int id, [FromBody]PostDto post)
         {
-            Post? currentPost = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == post.Id);
-            if (currentPost == null) return NotFound(new { message = "пост не найден" });
-            currentPost.Title = post.Title;
-            currentPost.Content = post.Content;
-            await _dbContext.SaveChangesAsync();
-            return Ok(currentPost);
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            try
+            {
+                await _postService.UpdateAsync(id, post);
+                return NoContent();
+            } catch(KeyNotFoundException)
+            {
+                return NotFound();
+            }
         }
 
         // DELETE api/<Posts>/5
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            Post? post = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
-            if (post == null) return NotFound(new { message = "пост не найден" });
-            _dbContext.Remove(post);
-            await _dbContext.SaveChangesAsync();
-            return Ok();
+            try
+            {
+                await _postService.DeleteAsync(id);
+                return NoContent();
+            } catch (KeyNotFoundException)
+            {
+                return NotFound();
+            }
         }
     }
 }

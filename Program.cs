@@ -1,5 +1,7 @@
 using BlogApi.Contexts;
+using BlogApi.Interfaces;
 using BlogApi.Models;
+using BlogApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlogApi
@@ -9,6 +11,7 @@ namespace BlogApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddScoped<IPostService, PostServices>();
             builder.Services.AddControllers();
             string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
             builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection));
