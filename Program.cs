@@ -13,6 +13,7 @@ namespace BlogApi
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddScoped<IPostService, PostServices>();
             builder.Services.AddControllers();
+            builder.Services.AddLogging(builder => builder.AddConsole());
             string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
             builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection));
             builder.Services.AddEndpointsApiExplorer();

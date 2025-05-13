@@ -9,13 +9,16 @@ namespace BlogApi.Services
     public class PostServices : IPostService
     {
         private readonly BlogContext _dbContext;
-        public PostServices(BlogContext dbContext)
+        private readonly ILogger<PostServices> _logger;
+        public PostServices(BlogContext dbContext, ILogger<PostServices> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
         public async Task<Post> CreateAsync(PostDto postDto)
         {
             var post = new Post() { Title = postDto.Title, Content = postDto.Content};
+            _logger.LogInformation("Создание поста: {Title}", post.Title);
             await _dbContext.AddAsync(post);
             await _dbContext.SaveChangesAsync();
             return post;
@@ -27,6 +30,7 @@ namespace BlogApi.Services
             if (post == null) throw new KeyNotFoundException("Пост не найден");
             _dbContext.Remove(post);
             await _dbContext.SaveChangesAsync();
+            _logger.LogInformation("Удаление поста: {Id}", post.Id);
         }
 
         public async Task<List<Post>> GetAllAsync()
@@ -46,6 +50,7 @@ namespace BlogApi.Services
             currentPost.Title = postDto.Title;
             currentPost.Content = postDto.Content;
             await _dbContext.SaveChangesAsync();
+            _logger.LogInformation("Изменение поста: {Id}", currentPost.Id);
         }
     }
 }
