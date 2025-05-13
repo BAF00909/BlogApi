@@ -23,7 +23,6 @@ namespace BlogApi.Services
             await _dbContext.SaveChangesAsync();
             return post;
         }
-
         public async Task DeleteAsync(int id)
         {
             Post? post = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
@@ -32,17 +31,14 @@ namespace BlogApi.Services
             await _dbContext.SaveChangesAsync();
             _logger.LogInformation("Удаление поста: {Id}", post.Id);
         }
-
         public async Task<List<Post>> GetAllAsync(int page, int pageSize)
         {
             return await _dbContext.Posts.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
         }
-
         public async Task<Post?> GetByIdAsync(int id)
         {
             return await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
         }
-
         public async Task UpdateAsync(int id, PostDto postDto)
         {
             Post? currentPost = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
