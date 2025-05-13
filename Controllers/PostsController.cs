@@ -17,9 +17,9 @@ namespace BlogApi.Controllers
         }
         // GET: api/<Posts>
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
-            var posts = await _postService.GetAllAsync();
+            var posts = await _postService.GetAllAsync(page, pageSize);
             return Ok(posts);
         }
 

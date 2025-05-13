@@ -33,9 +33,9 @@ namespace BlogApi.Services
             _logger.LogInformation("Удаление поста: {Id}", post.Id);
         }
 
-        public async Task<List<Post>> GetAllAsync()
+        public async Task<List<Post>> GetAllAsync(int page, int pageSize)
         {
-            return await _dbContext.Posts.ToListAsync();
+            return await _dbContext.Posts.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
         }
 
         public async Task<Post?> GetByIdAsync(int id)
