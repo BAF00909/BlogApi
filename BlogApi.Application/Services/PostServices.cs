@@ -16,7 +16,9 @@ namespace BlogApi.Services
         public async Task<Post> CreateAsync(PostDto postDto)
         {
             _logger.LogInformation("Creating new post: {Title}", postDto.Title);
-            var post = new Post() { Title = postDto.Title, Content = postDto.Content, CreateAt = DateTime.UtcNow};
+            var post = new Post();
+            post.Update(postDto.Title, postDto.Content);
+            post.CreateAt = DateTime.UtcNow;
             await _unitOfWork.Posts.AddAsync(post);
             await _unitOfWork.SaveChangesAsync();
             return post;
