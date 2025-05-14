@@ -1,52 +1,53 @@
-using BlogApi.Contexts;
-using BlogApi.Interfaces;
-using BlogApi.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
+using BlogApi.Application.Dtos;
+using BlogApi.Application.Interfaces;
+using BlogApi.Domain.Entities;
 
 namespace BlogApi.Services
 {
     public class PostServices : IPostService
     {
-        private readonly BlogContext _dbContext;
         private readonly ILogger<PostServices> _logger;
-        public PostServices(BlogContext dbContext, ILogger<PostServices> logger)
+        private readonly IUnitOfWork _unitOfWork;
+        public PostServices(IUnitOfWork unitOfWork ,ILogger<PostServices> logger)
         {
-            _dbContext = dbContext;
+            _unitOfWork = unitOfWork;
             _logger = logger;
         }
         public async Task<Post> CreateAsync(PostDto postDto)
         {
-            var post = new Post() { Title = postDto.Title, Content = postDto.Content};
-            _logger.LogInformation("Создание поста: {Title}", post.Title);
-            await _dbContext.AddAsync(post);
-            await _dbContext.SaveChangesAsync();
+            _logger.LogInformation("Creating new post: {Title}", postDto.Title);
+            var post = new Post() { Title = postDto.Title, Content = postDto.Content, CreateAt = DateTime.UtcNow};
+            await _unitOfWork.Posts.AddAsync(post);
+            await _unitOfWork.SaveChangesAsync();
             return post;
         }
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            Post? post = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
-            if (post == null) throw new KeyNotFoundException("Пост не найден");
-            _dbContext.Remove(post);
-            await _dbContext.SaveChangesAsync();
-            _logger.LogInformation("Удаление поста: {Id}", post.Id);
+            _logger.LogInformation("Delete post by ID: {Id}", id);
+            Post? post = await _unitOfWork.Posts.GetByIdAsync(id);
+            if (post == null) return false;
+            await _unitOfWork.Posts.DeleteAsync(id);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
         }
         public async Task<List<Post>> GetAllAsync(int page, int pageSize)
         {
-            return await _dbContext.Posts.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+            _logger.LogInformation($"Fetching post, page {page}, pageSize {pageSize}");
+            return await _unitOfWork.Posts.GetAllAsync(page, pageSize);
         }
         public async Task<Post?> GetByIdAsync(int id)
         {
-            return await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
+            return await _unitOfWork.Posts.GetByIdAsync(id);
         }
-        public async Task UpdateAsync(int id, PostDto postDto)
+        public async Task<bool> UpdateAsync(int id, PostDto postDto)
         {
-            Post? currentPost = await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
-            if (currentPost == null) throw new KeyNotFoundException("Пост не найден");
-            currentPost.Title = postDto.Title;
-            currentPost.Content = postDto.Content;
-            await _dbContext.SaveChangesAsync();
-            _logger.LogInformation("Изменение поста: {Id}", currentPost.Id);
+            _logger.LogInformation("Update post by ID: {Id}", id);
+            Post? currentPost = await _unitOfWork.Posts.GetByIdAsync(id);
+            if (currentPost == null) return false;
+            currentPost.Update(postDto.Title, postDto.Content);
+            await _unitOfWork.Posts.UpdateAsync(currentPost);
+            await _unitOfWork.SaveChangesAsync();
+            return true;
         }
     }
 }
