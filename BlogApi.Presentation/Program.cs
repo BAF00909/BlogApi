@@ -18,7 +18,7 @@ namespace BlogApi.Presentation
             builder.Services.AddSwaggerGen();
             // Add connection to db
             string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
-            builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection));
+            builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("BlogApi.Infrastructure")));
             // Register dependensies
             builder.Services.AddScoped<IPostRepository, PostRepositories>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
