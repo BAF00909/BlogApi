@@ -2,19 +2,23 @@ using BlogApi.Application.Interfaces;
 using BlogApi.Domain.Entities;
 using BlogApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace BlogApi.Infrastructure.Repositories
 {
     public class PostRepositories : IPostRepository
     {
         private readonly BlogContext _context;
-        public PostRepositories(BlogContext context)
+        private readonly ILogger<PostRepositories> _logger;
+        public PostRepositories(BlogContext context, ILogger<PostRepositories> logger)
         {
             _context = context;
+            _logger = logger;
         }
         public async Task AddAsync(Post post)
         {
             _context.Posts.Add(post);
+            _logger.LogInformation($"Добавлен новый пост: {post.Id} - {post.Title}");
             await _context.SaveChangesAsync();
         }
         public async Task DeleteAsync(int id)
@@ -28,6 +32,8 @@ namespace BlogApi.Infrastructure.Repositories
         }
         public async Task<(List<Post>, int TotalCount)> GetAllAsync(int page, int pageSize, string? title, string? sortBy, string? order)
         {
+            _logger.LogInformation("Fetching posts with page: {Page}, pageSize: {PageSize}, title: {Title}, sortBy: {SortBy}, order: {Order}",
+                page, pageSize, title ?? "null", sortBy ?? "null", order ?? "null");
             var query = _context.Posts.AsQueryable();
             if(!string.IsNullOrWhiteSpace(title))
             {
