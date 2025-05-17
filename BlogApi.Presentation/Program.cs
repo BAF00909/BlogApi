@@ -56,7 +56,7 @@ namespace BlogApi.Presentation
             // Register dependensies
             builder.Services.AddScoped<IPostRepository, PostRepositories>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-            builder.Services.AddScoped<IPostService, PostServices>();
+            builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddLogging(builder => builder.AddConsole());
 

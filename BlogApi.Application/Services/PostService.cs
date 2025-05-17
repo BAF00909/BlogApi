@@ -4,11 +4,11 @@ using BlogApi.Domain.Entities;
 
 namespace BlogApi.Services
 {
-    public class PostServices : IPostService
+    public class PostService : IPostService
     {
-        private readonly ILogger<PostServices> _logger;
+        private readonly ILogger<PostService> _logger;
         private readonly IUnitOfWork _unitOfWork;
-        public PostServices(IUnitOfWork unitOfWork ,ILogger<PostServices> logger)
+        public PostService(IUnitOfWork unitOfWork ,ILogger<PostService> logger)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
