@@ -1,8 +1,12 @@
 using BlogApi.Application.Interfaces;
+using BlogApi.Application.Services;
 using BlogApi.Infrastructure.Data;
 using BlogApi.Infrastructure.Repositories;
 using BlogApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace BlogApi.Presentation
 {
@@ -13,6 +17,20 @@ namespace BlogApi.Presentation
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to container
+            builder.Services.AddAuthorization();
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+            });
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -23,6 +41,7 @@ namespace BlogApi.Presentation
             builder.Services.AddScoped<IPostRepository, PostRepositories>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IPostService, PostServices>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddLogging(builder => builder.AddConsole());
 
             var app = builder.Build();
@@ -31,8 +50,9 @@ namespace BlogApi.Presentation
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseHttpsRedirection();
             app.MapControllers();
 
             app.Run();

@@ -1,6 +1,7 @@
 using BlogApi.Application.Dtos;
 using BlogApi.Application.Interfaces;
 using BlogApi.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -17,6 +18,7 @@ namespace BlogApi.Presentation.Controllers
             _postService = postService;
         }
         // GET: api/<Posts>
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
@@ -25,6 +27,7 @@ namespace BlogApi.Presentation.Controllers
         }
 
         // GET api/<Posts>/5
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -34,6 +37,7 @@ namespace BlogApi.Presentation.Controllers
         }
 
         // POST api/<Posts>
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]PostDto newPost)
         {
@@ -43,6 +47,7 @@ namespace BlogApi.Presentation.Controllers
         }
 
         // PUT api/<Posts>/5
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<ActionResult<Post>> Put(int id, [FromBody]PostDto post)
         {
@@ -53,6 +58,7 @@ namespace BlogApi.Presentation.Controllers
         }
 
         // DELETE api/<Posts>/5
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
