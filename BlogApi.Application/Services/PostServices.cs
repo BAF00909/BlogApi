@@ -32,10 +32,10 @@ namespace BlogApi.Services
             await _unitOfWork.SaveChangesAsync();
             return true;
         }
-        public async Task<List<Post>> GetAllAsync(int page, int pageSize)
+        public async Task<(List<Post>, int TotalCount)> GetAllAsync(int page, int pageSize, string? title, string? sortBy, string? order)
         {
             _logger.LogInformation($"Fetching post, page {page}, pageSize {pageSize}");
-            return await _unitOfWork.Posts.GetAllAsync(page, pageSize);
+            return await _unitOfWork.Posts.GetAllAsync(page, pageSize, title, sortBy, order);
         }
         public async Task<Post?> GetByIdAsync(int id)
         {

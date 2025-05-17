@@ -26,12 +26,38 @@ namespace BlogApi.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
-        public async Task<List<Post>> GetAllAsync(int page, int pageSize)
+        public async Task<(List<Post>, int TotalCount)> GetAllAsync(int page, int pageSize, string? title, string? sortBy, string? order)
         {
-            return await _context.Posts
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
+            var query = _context.Posts.AsQueryable();
+            if(!string.IsNullOrWhiteSpace(title))
+            {
+                query = query.Where(p => p.Title.ToLower().Contains(title.ToLower()));
+            }
+            int totalCount = await query.CountAsync();
+            if(!string.IsNullOrWhiteSpace(sortBy))
+            {
+                switch(sortBy.ToLower())
+                {
+                    case "title": 
+                        query = order?.ToLower() == "desc" ? query.OrderByDescending(p => p.Title) : query.OrderBy(p => p.Title);
+                        break;
+                    case "createat":
+                        query = order?.ToLower() == "desc" ? query.OrderByDescending(p => p.CreateAt) : query.OrderBy(p => p.CreateAt);
+                        break;
+                    default: 
+                        query = query.OrderBy(p => p.Id);
+                        break;
+                } 
+            } else
+            {
+                query = query.OrderBy(p => p.Id);
+            }
+
+            var posts = await query
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+            return (posts, totalCount);
         }
         public async Task<Post?> GetByIdAsync(int id)
         {

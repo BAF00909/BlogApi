@@ -4,7 +4,7 @@ namespace BlogApi.Application.Interfaces
 {
     public interface IPostRepository
     {
-        Task<List<Post>> GetAllAsync(int page, int pageSize);
+        Task<(List<Post>, int TotalCount)> GetAllAsync(int page, int pageSize, string? title, string? sortBy, string? order);
         Task<Post?> GetByIdAsync(int id);
         Task AddAsync(Post post);
         Task UpdateAsync(Post post);

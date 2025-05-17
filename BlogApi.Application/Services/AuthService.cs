@@ -16,7 +16,7 @@ namespace BlogApi.Application.Services
                 issuer: configurations["Jwt:Issuer"],
                 audience: configurations["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(2)),
+                expires: DateTime.UtcNow.Add(TimeSpan.FromMinutes(20)),
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configurations["Jwt:Key"])), SecurityAlgorithms.HmacSha256)
                 );
             return new JwtSecurityTokenHandler().WriteToken(jwt);

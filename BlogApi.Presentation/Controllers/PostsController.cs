@@ -20,10 +20,22 @@ namespace BlogApi.Presentation.Controllers
         // GET: api/<Posts>
         [Authorize]
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetAll(
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 10,
+            [FromQuery] string? title = null,
+            [FromQuery] string? sortBy = null,
+            [FromQuery] string? order = null
+            )
         {
-            var posts = await _postService.GetAllAsync(page, pageSize);
-            return Ok(posts);
+            var (posts, totalCount) = await _postService.GetAllAsync(page, pageSize, title, sortBy, order);
+            return Ok(new
+            {
+                Posts = posts,
+                TotalCount = totalCount,
+                Page = page,
+                PageSize = pageSize
+            });
         }
 
         // GET api/<Posts>/5
