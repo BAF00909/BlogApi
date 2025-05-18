@@ -16,6 +16,7 @@ namespace BlogApi.Presentation
     {
         public static void Main(string[] args)
         {
+            string CORS_POLICY = "AllowFrontend";
             var builder = WebApplication.CreateBuilder(args);
             // Add serilog
             Log.Logger = new LoggerConfiguration()
@@ -54,7 +55,7 @@ namespace BlogApi.Presentation
             string[] allowPath = new string[] { builder.Configuration["AllowClientOriginal"] };
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowFrontend", builder =>
+                options.AddPolicy(CORS_POLICY, builder =>
                 {
                     builder.WithOrigins(allowPath)
                     .AllowAnyMethod()
@@ -78,6 +79,7 @@ namespace BlogApi.Presentation
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseCors(CORS_POLICY);
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseHttpsRedirection();
