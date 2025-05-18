@@ -17,7 +17,7 @@ namespace BlogApi.Presentation
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            // Add serilog
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
@@ -31,8 +31,7 @@ namespace BlogApi.Presentation
                 )
                 .CreateLogger();
             builder.Host.UseSerilog();
-
-            // Add services to container
+            // Add authorization
             builder.Services.AddAuthorization();
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
             {
@@ -47,9 +46,22 @@ namespace BlogApi.Presentation
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                 };
             });
+            // Add services to container
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            // Add CORS
+            string[] allowPath = new string[] { builder.Configuration["AllowClientOriginal"] };
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend", builder =>
+                {
+                    builder.WithOrigins(allowPath)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
+                });
+            });
             // Add connection to db
             string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
             builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("BlogApi.Infrastructure")).EnableSensitiveDataLogging());
@@ -59,7 +71,7 @@ namespace BlogApi.Presentation
             builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddLogging(builder => builder.AddConsole());
-
+            // Add swagger
             var app = builder.Build();
             if (app.Environment.IsDevelopment())
             {

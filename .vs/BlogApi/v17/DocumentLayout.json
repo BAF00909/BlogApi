@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\github\\BlogApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E65A0EDB-C436-46D9-BF72-D102BF0A71F0}|BlogApi.Tests\\BlogApi.Tests.csproj|d:\\github\\blogapi\\blogapi.tests\\postservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E65A0EDB-C436-46D9-BF72-D102BF0A71F0}|BlogApi.Tests\\BlogApi.Tests.csproj|solutionrelative:blogapi.tests\\postservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E65A0EDB-C436-46D9-BF72-D102BF0A71F0}|BlogApi.Tests\\BlogApi.Tests.csproj|d:\\github\\blogapi\\blogapi.tests\\blogapi.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E65A0EDB-C436-46D9-BF72-D102BF0A71F0}|BlogApi.Tests\\BlogApi.Tests.csproj|solutionrelative:blogapi.tests\\blogapi.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "BlogApi.Tests",
-              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Tests\\BlogApi.Tests.csproj",
-              "RelativeDocumentMoniker": "BlogApi.Tests\\BlogApi.Tests.csproj",
-              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Tests\\BlogApi.Tests.csproj",
-              "RelativeToolTip": "BlogApi.Tests\\BlogApi.Tests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-17T12:38:12.086Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "BlogApi.Presentation\\appsettings.json",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Presentation\\appsettings.json",
+              "RelativeToolTip": "BlogApi.Presentation\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-18T07:13:34.168Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PostServiceTests.cs",
-              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Tests\\PostServiceTests.cs",
-              "RelativeDocumentMoniker": "BlogApi.Tests\\PostServiceTests.cs",
-              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Tests\\PostServiceTests.cs",
-              "RelativeToolTip": "BlogApi.Tests\\PostServiceTests.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACkAAABkAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "BlogApi.Presentation\\Program.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Presentation\\Program.cs",
+              "RelativeToolTip": "BlogApi.Presentation\\Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwDYAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T12:35:43.134Z",
+              "WhenOpened": "2025-05-18T07:09:58.428Z",
               "EditorCaption": ""
             }
           ]
