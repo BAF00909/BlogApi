@@ -68,9 +68,11 @@ namespace BlogApi.Presentation
             builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("BlogApi.Infrastructure")).EnableSensitiveDataLogging());
             // Register dependensies
             builder.Services.AddScoped<IPostRepository, PostRepository>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
+            builder.Services.AddScoped<UserService>();
             builder.Services.AddLogging(builder => builder.AddConsole());
             // Add swagger
             var app = builder.Build();

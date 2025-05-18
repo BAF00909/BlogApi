@@ -6,10 +6,12 @@ namespace BlogApi.Infrastructure.Data
     {
         private readonly BlogContext _context;
         public IPostRepository Posts { get; }
-        public UnitOfWork(BlogContext context, IPostRepository postRepository)
+        public IUserRepository Users { get; }
+        public UnitOfWork(BlogContext context, IPostRepository postRepository, IUserRepository usersRepository)
         {
             _context = context;
             Posts = postRepository;
+            Users = usersRepository;
         }
 
         public void Dispose()

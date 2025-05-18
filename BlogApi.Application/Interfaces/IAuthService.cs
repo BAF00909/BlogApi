@@ -4,6 +4,6 @@ namespace BlogApi.Application.Interfaces
 {
     public interface IAuthService
     {
-        string GetJwtToken(LoginDto loginDtao, IConfiguration configurations);
+        string GetJwtToken(LoginDto loginDtao);
     }
 }

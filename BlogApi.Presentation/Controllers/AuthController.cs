@@ -1,5 +1,6 @@
 using BlogApi.Application.Dtos;
 using BlogApi.Application.Interfaces;
+using BlogApi.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,21 +11,36 @@ namespace BlogApi.Presentation.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthService _authService;
-        private readonly IConfiguration _configurations;
-        public AuthController(IAuthService authService, IConfiguration configurations) { 
-            _authService = authService;
-            _configurations = configurations;
+        private readonly UserService _userService;
+        public AuthController(UserService userService) { 
+            _userService = userService;
         }
-
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginDto loginTdo) {
-            if (loginTdo.UserName == "admin" && loginTdo.Password == "password")
+            try
             {
-                var token = _authService.GetJwtToken(loginTdo, _configurations);
+                var token = _userService.LogInAsync(loginTdo);
                 return Ok(new { token });
+            } catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(ex.Message);
             }
-            return Unauthorized();
+        }
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
+        {
+            try
+            {
+                await _userService.RegisterAsync(registerDto);
+                return NoContent();
+            }
+            catch (ArgumentException ex) {
+                return BadRequest(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
     }
 }

@@ -3,12 +3,68 @@
   "WorkspaceRootPath": "D:\\github\\BlogApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|d:\\github\\blogapi\\blogapi.infrastructure\\data\\blogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|solutionrelative:blogapi.infrastructure\\data\\blogcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|d:\\github\\blogapi\\blogapi.infrastructure\\data\\blogcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|solutionrelative:blogapi.infrastructure\\data\\blogcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|d:\\github\\blogapi\\blogapi.infrastructure\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|solutionrelative:blogapi.infrastructure\\data\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|d:\\github\\blogapi\\blogapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|solutionrelative:blogapi.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|d:\\github\\blogapi\\blogapi.infrastructure\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67B5D8FA-6873-88A2-BD05-46DB7BD274BF}|BlogApi.Infrastructure\\BlogApi.Infrastructure.csproj|solutionrelative:blogapi.infrastructure\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B7261C16-68F2-745B-E9B1-E8C284D1D857}|BlogApi.Domain\\BlogApi.Domain.csproj|d:\\github\\blogapi\\blogapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B7261C16-68F2-745B-E9B1-E8C284D1D857}|BlogApi.Domain\\BlogApi.Domain.csproj|solutionrelative:blogapi.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +74,212 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BlogContextFactory.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Data\\BlogContextFactory.cs",
+              "RelativeDocumentMoniker": "BlogApi.Infrastructure\\Data\\BlogContextFactory.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Data\\BlogContextFactory.cs",
+              "RelativeToolTip": "BlogApi.Infrastructure\\Data\\BlogContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T09:24:38.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\appsettings.json",
               "RelativeDocumentMoniker": "BlogApi.Presentation\\appsettings.json",
               "ToolTip": "D:\\github\\BlogApi\\BlogApi.Presentation\\appsettings.json",
               "RelativeToolTip": "BlogApi.Presentation\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-18T07:13:34.168Z",
+              "WhenOpened": "2025-05-18T09:12:53.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BlogContext.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Data\\BlogContext.cs",
+              "RelativeDocumentMoniker": "BlogApi.Infrastructure\\Data\\BlogContext.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Data\\BlogContext.cs",
+              "RelativeToolTip": "BlogApi.Infrastructure\\Data\\BlogContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T09:10:50.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Interfaces\\IUserService.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "BlogApi.Application\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:58:04.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BlogApi.Presentation\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Presentation\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BlogApi.Presentation\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:56:49.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Interfaces\\IAuthService.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "BlogApi.Application\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:53:50.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Services\\AuthService.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "BlogApi.Application\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T08:50:13.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Data\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "BlogApi.Infrastructure\\Data\\UnitOfWork.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Data\\UnitOfWork.cs",
+              "RelativeToolTip": "BlogApi.Infrastructure\\Data\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:51:30.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Services\\UserService.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Services\\UserService.cs",
+              "RelativeToolTip": "BlogApi.Application\\Services\\UserService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwCQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:43:41.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Dtos\\LoginDto.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Dtos\\LoginDto.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Dtos\\LoginDto.cs",
+              "RelativeToolTip": "BlogApi.Application\\Dtos\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:42:33.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Dtos\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Dtos\\RegisterDto.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Dtos\\RegisterDto.cs",
+              "RelativeToolTip": "BlogApi.Application\\Dtos\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:42:32.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PostRepository.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Repositories\\PostRepository.cs",
+              "RelativeDocumentMoniker": "BlogApi.Infrastructure\\Repositories\\PostRepository.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Repositories\\PostRepository.cs",
+              "RelativeToolTip": "BlogApi.Infrastructure\\Repositories\\PostRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:39:06.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "BlogApi.Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "BlogApi.Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:38:38.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "BlogApi.Application\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "BlogApi.Application\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:37:11.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "BlogApi.Domain\\Entities\\User.cs",
+              "ToolTip": "D:\\github\\BlogApi\\BlogApi.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "BlogApi.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T07:28:18.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\Program.cs",
               "RelativeDocumentMoniker": "BlogApi.Presentation\\Program.cs",
               "ToolTip": "D:\\github\\BlogApi\\BlogApi.Presentation\\Program.cs",
               "RelativeToolTip": "BlogApi.Presentation\\Program.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAwwFIAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAwwEkAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-18T07:09:58.428Z",
               "EditorCaption": ""
