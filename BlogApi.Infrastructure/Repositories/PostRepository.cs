@@ -6,11 +6,11 @@ using Microsoft.Extensions.Hosting;
 
 namespace BlogApi.Infrastructure.Repositories
 {
-    public class PostRepositories : IPostRepository
+    public class PostRepository : IPostRepository
     {
         private readonly BlogContext _context;
-        private readonly ILogger<PostRepositories> _logger;
-        public PostRepositories(BlogContext context, ILogger<PostRepositories> logger)
+        private readonly ILogger<PostRepository> _logger;
+        public PostRepository(BlogContext context, ILogger<PostRepository> logger)
         {
             _context = context;
             _logger = logger;

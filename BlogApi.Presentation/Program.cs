@@ -67,7 +67,7 @@ namespace BlogApi.Presentation
             string connection = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
             builder.Services.AddDbContext<BlogContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("BlogApi.Infrastructure")).EnableSensitiveDataLogging());
             // Register dependensies
-            builder.Services.AddScoped<IPostRepository, PostRepositories>();
+            builder.Services.AddScoped<IPostRepository, PostRepository>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
