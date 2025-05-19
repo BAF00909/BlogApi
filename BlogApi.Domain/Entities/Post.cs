@@ -6,6 +6,7 @@ namespace BlogApi.Domain.Entities
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CreateAt { get; set; }
+        public string? ImagePath { get; set; }
         public void Update(string title, string content)
         {
             if(string.IsNullOrWhiteSpace(title))

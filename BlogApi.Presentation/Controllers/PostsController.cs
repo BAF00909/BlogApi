@@ -78,5 +78,19 @@ namespace BlogApi.Presentation.Controllers
             if (!delete) return NotFound();
             return NoContent();
         }
+        [Authorize]
+        [HttpPost("{id}/image")]
+        public async Task<IActionResult> UploadImage(int id, IFormFile image)
+        {
+            try {
+                var imagePath = await _postService.UploadImagesAsync(id, image);
+                return Ok(new { ImagePath = imagePath});
+            } catch(KeyNotFoundException ex) {
+                return NotFound("Post not found");
+            }catch(ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

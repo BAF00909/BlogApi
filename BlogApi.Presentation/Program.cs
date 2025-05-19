@@ -81,6 +81,7 @@ namespace BlogApi.Presentation
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseStaticFiles();
             app.UseCors(CORS_POLICY);
             app.UseAuthentication();
             app.UseAuthorization();
