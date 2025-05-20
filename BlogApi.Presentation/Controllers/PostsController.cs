@@ -1,6 +1,8 @@
 using BlogApi.Application.Dtos;
 using BlogApi.Application.Interfaces;
+using BlogApi.Application.Queries;
 using BlogApi.Domain.Entities;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,9 +15,11 @@ namespace BlogApi.Presentation.Controllers
     public class PostsController : ControllerBase
     {
         private readonly IPostService _postService;
-        public PostsController(IPostService postService)
+        private readonly IMediator _mediator;
+        public PostsController(IPostService postService, IMediator mediator)
         {
             _postService = postService;
+            _mediator = mediator;
         }
         // GET: api/<Posts>
         [Authorize]
@@ -28,7 +32,15 @@ namespace BlogApi.Presentation.Controllers
             [FromQuery] string? order = null
             )
         {
-            var (posts, totalCount) = await _postService.GetAllAsync(page, pageSize, title, sortBy, order);
+            var query = new GetPostQuery
+            {
+                Title = title,
+                Order = order,
+                Page = page,
+                PageSize = pageSize,
+                SortBy = sortBy
+            };
+            var (posts, totalCount) = await _mediator.Send(query);
             return Ok(new
             {
                 Posts = posts,

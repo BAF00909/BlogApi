@@ -2,6 +2,7 @@ using BlogApi.Application.Dtos;
 using BlogApi.Application.Interfaces;
 using BlogApi.Domain.Entities;
 using BlogApi.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Shouldly;

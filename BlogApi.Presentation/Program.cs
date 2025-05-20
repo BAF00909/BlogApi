@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Serilog;
 using Serilog.Events;
+using BlogApi.Application.Queries;
 
 namespace BlogApi.Presentation
 {
@@ -73,6 +74,7 @@ namespace BlogApi.Presentation
             builder.Services.AddScoped<IPostService, PostService>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<UserService>();
+            builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(typeof(GetPostQuery).Assembly));
             builder.Services.AddLogging(builder => builder.AddConsole());
             // Add swagger
             var app = builder.Build();

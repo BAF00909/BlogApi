@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\github\\BlogApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|d:\\github\\blogapi\\blogapi.application\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2AA690F8-2B0C-B7CA-2D5E-36DB01DB247C}|BlogApi.Application\\BlogApi.Application.csproj|solutionrelative:blogapi.application\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|d:\\github\\blogapi\\blogapi.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBEAF41F-7B6F-10E0-38D2-64A24C574381}|BlogApi.Presentation\\BlogApi.Presentation.csproj|solutionrelative:blogapi.presentation\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\Program.cs",
               "RelativeDocumentMoniker": "BlogApi.Presentation\\Program.cs",
@@ -47,7 +47,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Post.cs",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Domain\\Entities\\Post.cs",
               "RelativeDocumentMoniker": "BlogApi.Domain\\Entities\\Post.cs",
@@ -60,20 +60,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "PostsController.cs",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Presentation\\Controllers\\PostsController.cs",
               "RelativeDocumentMoniker": "BlogApi.Presentation\\Controllers\\PostsController.cs",
               "ToolTip": "D:\\github\\BlogApi\\BlogApi.Presentation\\Controllers\\PostsController.cs",
               "RelativeToolTip": "BlogApi.Presentation\\Controllers\\PostsController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAYwFcAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T11:17:19.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "IPostService.cs",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Interfaces\\IPostService.cs",
               "RelativeDocumentMoniker": "BlogApi.Application\\Interfaces\\IPostService.cs",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PostService.cs",
               "DocumentMoniker": "D:\\github\\BlogApi\\BlogApi.Application\\Services\\PostService.cs",
               "RelativeDocumentMoniker": "BlogApi.Application\\Services\\PostService.cs",
